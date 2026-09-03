@@ -1,0 +1,263 @@
+<title>Music of Open Doors</title>
+<meta name="description" content="Music of Open Doors: a single acoustic concert played in Tver, Russia on 26 May 2010, restored and released in 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground:   #eef1f5;
+    --surface:  #f8fafc;
+    --ink:      #141b24;
+    --ink-soft: #5d6b7b;
+    --ink-faint:#8794a3;
+    --line:     #d4dce5;
+    --accent:   #2d6b91;
+    --halo:     rgba(45,107,145,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #0c1117;
+      --surface:  #121a22;
+      --ink:      #e4ebf3;
+      --ink-soft: #8c9aab;
+      --ink-faint:#68757f;
+      --line:     #222c37;
+      --accent:   #92c0dd;
+      --halo:     rgba(146,192,221,.10);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:   #0c1117;
+    --surface:  #121a22;
+    --ink:      #e4ebf3;
+    --ink-soft: #8c9aab;
+    --ink-faint:#68757f;
+    --line:     #222c37;
+    --accent:   #92c0dd;
+    --halo:     rgba(146,192,221,.10);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.75rem, 6vw, 4.25rem);
+  }
+
+  .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .6875rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .back {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .75rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-family: "Bodoni Moda", Didot, "Bodoni MT", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.75rem, 10vw, 5rem);
+    line-height: .96;
+    letter-spacing: -.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .byline { font-size: 1.0625rem; color: var(--ink-soft); margin: 0; }
+
+  .lede {
+    font-size: clamp(1.0625rem, 2.4vw, 1.1875rem);
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0;
+  }
+
+  .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+  section { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .heading {
+    font-family: "Bodoni Moda", Didot, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  p { margin: 0; max-width: 62ch; }
+  p + p { margin-top: .9rem; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.1rem 1.5rem;
+    margin: 0;
+  }
+  .facts div { display: flex; flex-direction: column; gap: .25rem; }
+  .facts dd {
+    margin: 0;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .875rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tracks { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+
+  .track {
+    display: grid;
+    grid-template-columns: 1.75rem 1fr auto;
+    gap: .15rem .9rem;
+    padding: .7rem 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .tracks li:last-child { border-bottom: 1px solid var(--line); }
+
+  .num, .dur {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .75rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .dur { justify-self: end; }
+  .track-title { font-weight: 500; }
+  .writer {
+    grid-column: 2 / -1;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .6875rem;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+  }
+  .writer.cover { color: var(--accent); }
+
+  .riyl {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .8125rem;
+    color: var(--accent);
+    background: var(--halo);
+    padding: .55rem .75rem;
+    border-radius: 2px;
+    align-self: flex-start;
+  }
+
+  .listen-cta {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .8125rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .personnel { margin: 0; padding: 0; list-style: none; color: var(--ink-soft); display: flex; flex-direction: column; gap: .3rem; }
+
+  footer {
+    color: var(--ink-faint);
+    font-size: .8125rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+
+  @media (max-width: 30rem) {
+    .track { grid-template-columns: 1.5rem 1fr; }
+    .dur { grid-column: 2; justify-self: start; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="label"><a class="back" href="../">Aleksei Prokhorov</a></p>
+    <h1 class="title">Music of Open Doors</h1>
+    <p class="byline">Recorded live in Tver, Russia, 26 May 2010. Released 5 September 2026.</p>
+    <p class="lede">One concert, one night, one tape that sat on a shelf for sixteen years. Two classical guitars, hand percussion and flutes, restored and released for the first time.</p>
+    <p><a class="listen-cta" href="https://too.fm/yk15dlr">Listen on every platform</a></p>
+  </header>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="heading">The concert</h2>
+    <p>On 26 May 2010 an acoustic ensemble called Crystal Ship played a single concert in a hall in Tver. The program, as printed on the handbill, promised "psychedelic poetry, atonal music and assorted nonsense." Nine of the twelve pieces are the duo's own and three of those were improvised on stage that night. The set also carries a piece by their teacher Evgeny Baev, Carlo Domeniconi's Koyunbaba and Villa-Lobos's Etude No. 8.</p>
+    <p>The name is a pun the ensemble had been sitting on since 1967: the group is called Crystal Ship, so the evening was billed as the music of open Doors.</p>
+    <p>It sounds like ritual music rather than a recital: nylon strings, ethnic flutes and hand percussion in a long reverb, avant-garde in shape, with three of the twelve pieces invented on the spot.</p>
+    <p class="riyl">RIYL: Popol Vuh, Codona, Third Ear Band</p>
+  </section>
+
+  <section>
+    <h2 class="heading">Tracks</h2>
+    <ol class="tracks">
+      <li class="track"><span class="num">01</span><span class="track-title">Listen to the Rhythm</span><span class="dur">2:18</span><span class="writer">Prokhorov and Podoynitsyn, improvised. Vocals.</span></li>
+      <li class="track"><span class="num">02</span><span class="track-title">Mustang</span><span class="dur">3:24</span><span class="writer">Evgeny Baev</span></li>
+      <li class="track"><span class="num">03</span><span class="track-title">The Mists of Darjeeling</span><span class="dur">3:14</span><span class="writer">Ilya Podoynitsyn</span></li>
+      <li class="track"><span class="num">04</span><span class="track-title">Khazar Dance</span><span class="dur">2:48</span><span class="writer">Prokhorov and Podoynitsyn, improvised</span></li>
+      <li class="track"><span class="num">05</span><span class="track-title">Dream On</span><span class="dur">3:14</span><span class="writer">Aleksei Prokhorov</span></li>
+      <li class="track"><span class="num">06</span><span class="track-title">Etude No. 8</span><span class="dur">2:54</span><span class="writer cover">Heitor Villa-Lobos</span></li>
+      <li class="track"><span class="num">07</span><span class="track-title">Compás</span><span class="dur">2:03</span><span class="writer">Prokhorov and Podoynitsyn, improvised</span></li>
+      <li class="track"><span class="num">08</span><span class="track-title">Thunderstorm</span><span class="dur">3:39</span><span class="writer">Aleksei Prokhorov</span></li>
+      <li class="track"><span class="num">09</span><span class="track-title">Spring</span><span class="dur">3:24</span><span class="writer">Aleksei Prokhorov</span></li>
+      <li class="track"><span class="num">10</span><span class="track-title">Homo Hominus</span><span class="dur">2:37</span><span class="writer">Aleksei Prokhorov</span></li>
+      <li class="track"><span class="num">11</span><span class="track-title">Koyunbaba, IV</span><span class="dur">3:18</span><span class="writer cover">Carlo Domeniconi</span></li>
+      <li class="track"><span class="num">12</span><span class="track-title">Crystal Ship</span><span class="dur">2:12</span><span class="writer">Aleksei Prokhorov. Vocals.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 class="heading">Personnel</h2>
+    <ul class="personnel">
+      <li>Aleksei Prokhorov, classical guitar and voice</li>
+      <li>Ilya Podoynitsyn, classical guitar and flutes</li>
+    </ul>
+    <p>Words on tracks 1 and 12 by Artem Sergeichev and Aleksei Prokhorov, sung in Russian. The other ten tracks are instrumental.</p>
+  </section>
+
+  <section>
+    <h2 class="heading">Details</h2>
+    <dl class="facts">
+      <div><dt class="label">Release date</dt><dd>5 September 2026</dd></div>
+      <div><dt class="label">Format</dt><dd>Album, 12 tracks</dd></div>
+      <div><dt class="label">Duration</dt><dd>35:10</dd></div>
+      <div><dt class="label">Label</dt><dd>Crystal Ship</dd></div>
+      <div><dt class="label">UPC</dt><dd>0682286992424</dd></div>
+      <div><dt class="label">Genre</dt><dd>Folk, world, experimental</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="heading">On AI</h2>
+    <p>This is a live human performance from 2010. AI tools were used only to restore and master the original tape, which means they touched the sound quality, not the playing. Melody, harmony, tempo and form are exactly what was played that night. Nothing was generated from a prompt.</p>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p>Press enquiries, full files and artwork: <a href="mailto:lyda.prokh@gmail.com">lyda.prokh@gmail.com</a></p>
+    <p>Distributed by Too&nbsp;Lost LLC</p>
+  </footer>
+
+</div>
