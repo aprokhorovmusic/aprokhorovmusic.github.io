@@ -4,13 +4,13 @@ Facts about this page, so they don't have to be re-established each time.
 
 ## Identity
 
-**Aleksei Prokhorov** is the artist. **Lopsha** is the name the releases
-currently carry on stores; a change to Aleksei Prokhorov is in progress with
-the distributor. They are the same person — not collaborators. Any text that
-credits "Aleksei Prokhorov" as a guest on a Lopsha release is wrong.
+**Aleksei Prokhorov** is the artist. **Lopsha** is a pseudonym he chose for
+instrumental and electronic music; classical guitar goes out under his own
+name. Decided on 5 September 2026: the name stays, no rename with the
+distributor. They are the same person. Any text that credits "Aleksei
+Prokhorov" as a guest on a Lopsha release is wrong.
 
-Two artist profiles exist per store because of this split and should end up
-merged after the rename:
+Two artist profiles exist per store, one per name, and both stay:
 
 | Store | Lopsha | Aleksei Prokhorov |
 |---|---|---|
